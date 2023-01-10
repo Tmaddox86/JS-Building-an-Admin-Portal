@@ -5,6 +5,23 @@ async function main() {
 
     books.forEach(renderBook)
 }
+    let response = await fetch ('http://localhost:3001/listBooks'){
+    method:'PATCH',
+    headers:{
+        'Content-Type' :'application/json'
+    },
+    body: JSON.stringify({
+        "id" : 3,
+        "title" : "Legends of Arathrae",
+    }),
+};
+
+/*"id": 3,
+"title": "The Annals of Arathrae",
+"description": "This anthology tells the intertwined narratives of six fairy tales.",
+"year": 2016,
+"quantity": "8",
+"imageURL": "/assets/arathrae.jpeg"*/
 
 function renderBook(book) {
     let bookContainer = document.querySelector('.book-container')
