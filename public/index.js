@@ -1,28 +1,18 @@
 async function main() {
 
     let response = await fetch ('http://localhost:3001/listBooks')
-    method:'PATCH',
-    headers; {
-        'Content-Type' ;'application/json'
-    }
     let books = await response.json()
+    
     books.forEach(renderBook)
-
-    body ; JSON.stringify({
-        "id" : 3,
-        "title" : "Legends of Arathrae",
-    });
 };
 
-const createBtn = (text = 'Update Books')=>{
+/*const createBtn = (text = 'Update Books')=>{
     const btn = document.createElement('button');
     btn.innerText = 'Update Book';
     document.body.appendChild(btn);
    return btn;
 };
-
-
-/*"id": 3,
+"id": 3,
 "title": "The Annals of Arathrae",
 "description": "This anthology tells the intertwined narratives of six fairy tales.",
 "year": 2016,
